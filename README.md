@@ -55,3 +55,93 @@ YModem-g传输形式与YModem-1K差不多，但是它去掉了数据的CRC校验
 接下来就可以依次进行数据发送
 
 注意：每一个公司的协议是不一样的但是你理解原理之后 协议不管怎么改 都可以去解决。
+
+发送YModem到蓝牙的关键代码 根据底层的协议去进行发送数据
+
+```Objective-c
+//接受终端数据然后再发送数据到终端
+- (void)setOTADataWithOrderStatus:(NSString *)status fileName:(NSString *)filename {
+    //发送头包
+    if([status isEqual:OTAC]){
+        NSLog(@"Head");
+        NSData *data_first = [self prepareFirstPacketWithFileName:filename];
+        if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+            [self.delegate onWriteBleData:data_first];
+        }
+    }
+    //发送第一包 和 最后的结束包 ACK/C
+    else if([status isEqual:OTASTART]){
+        if(index_packet>0){
+            NSData *data = [self prepareEndPacket];
+            if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                [self.delegate onWriteBleData:data];
+            }
+            index_packet = OTAUPEND;
+        }else{
+            // 正式包数组 获取所有拆解包放入数组中存储
+            if (self.packetArray.count==0) {
+                self.packetArray = [self preparePacketWithFileName:filename];
+            }
+            NSData *data = self.packetArray[index_packet];
+            
+            //写入蓝牙数据
+            if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                [self.delegate onWriteBleData:data];
+            }
+            index_packet_cache = index_packet;
+        }
+    }
+    
+    //接受到ACK
+    else if([status isEqual:OTAACK]){
+        if(index_packet==OTAUPEND){
+            NSLog(@"升级完成");
+        }
+        index_packet++;
+        NSLog(@"ACK");
+        if (index_packet < self.packetArray.count) {
+            if (index_packet != index_packet_cache) {
+                self.packetArray = [self preparePacketWithFileName:filename];
+                NSData *data = self.packetArray[index_packet];
+                //拆包发送
+                if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                    [self.delegate onWriteBleData:data];
+                }
+            }
+            index_packet_cache = index_packet;
+        }else{
+            Byte byte4[] = {0x04};
+            NSData *data23 = [NSData dataWithBytes:byte4 length:sizeof(byte4)];
+            NSLog(@"准备结束第一次OTA");
+            if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                [self.delegate onWriteBleData:data23];
+            }
+        }
+        //沉睡300ms
+        [NSThread sleepForTimeInterval:0.5];
+    }
+    //接受到NAK的时候
+    else if([status isEqual:OTANAK]){
+        if(index_packet>0){
+            Byte byte4[] = {0x04};
+            NSData *data23 = [NSData dataWithBytes:byte4 length:sizeof(byte4)];
+            NSLog(@"准备结束第二次OTA");
+            if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                [self.delegate onWriteBleData:data23];
+            }
+        }else{
+            NSLog(@"升级失败了");
+        }
+    }
+    
+    //通过代理返回当前你的升级大小
+    if(self.packetArray.count>0){
+        if([self.delegate respondsToSelector:@selector(onCurrent:onTotal:)]){
+            [self.delegate onCurrent:index_packet onTotal:self.packetArray.count];
+        }
+    }
+}
+
+```
+
+具体的详细过程 请看YYModemOCDemo
