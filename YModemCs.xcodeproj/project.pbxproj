@@ -1,0 +1,856 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		862DE35EBDBA460C2C11B769 /* libPods-YModemCs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BF10054200B0F5196A874 /* libPods-YModemCs.a */; };
+		BC4F740720D352B5004505E4 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4F740620D352B5004505E4 /* NoteView.m */; };
+		BC4F740A20D3533B004505E4 /* DownLoadBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4F740920D3533B004505E4 /* DownLoadBtn.m */; };
+		BC4F740D20D3537A004505E4 /* DownLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC4F740C20D3537A004505E4 /* DownLoadView.m */; };
+		BCC9588E20D2115A0086F856 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC9588D20D2115A0086F856 /* AppDelegate.m */; };
+		BCC9589120D2115A0086F856 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC9589020D2115A0086F856 /* ViewController.m */; };
+		BCC9589420D2115A0086F856 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC9589220D2115A0086F856 /* Main.storyboard */; };
+		BCC9589620D2115A0086F856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC9589520D2115A0086F856 /* Assets.xcassets */; };
+		BCC9589920D2115A0086F856 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC9589720D2115A0086F856 /* LaunchScreen.storyboard */; };
+		BCC9589C20D2115A0086F856 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC9589B20D2115A0086F856 /* main.m */; };
+		BCC958A620D2115B0086F856 /* YModemCsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958A520D2115B0086F856 /* YModemCsTests.m */; };
+		BCC958B120D2115B0086F856 /* YModemCsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958B020D2115B0086F856 /* YModemCsUITests.m */; };
+		BCC958C220D213760086F856 /* MainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958C120D213760086F856 /* MainCell.m */; };
+		BCC958CA20D213F80086F856 /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958C920D213F80086F856 /* CommonUtil.m */; };
+		BCC958CD20D214320086F856 /* BTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958CC20D214320086F856 /* BTAlertController.m */; };
+		BCC958D120D2146F0086F856 /* DeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958D020D2146F0086F856 /* DeviceModel.m */; };
+		BCC958D520D214990086F856 /* BlueHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958D420D214990086F856 /* BlueHelp.m */; };
+		BCC958D920D214F40086F856 /* YModem.c in Sources */ = {isa = PBXBuildFile; fileRef = BCC958D720D214F40086F856 /* YModem.c */; };
+		BCC958E120D21D160086F856 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958E020D21D160086F856 /* MainController.m */; };
+		BCC958E520D21D4D0086F856 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958E420D21D4D0086F856 /* MainView.m */; };
+		BCC958E820D229410086F856 /* YModemUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958E720D229410086F856 /* YModemUtil.m */; };
+		BCC958ED20D242FC0086F856 /* OTAFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958EC20D242FC0086F856 /* OTAFileCell.m */; };
+		BCC958F220D2435F0086F856 /* FileOTAView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958F120D2435F0086F856 /* FileOTAView.m */; };
+		BCC958F520D243A30086F856 /* FileOTAController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958F420D243A30086F856 /* FileOTAController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCC958A220D2115B0086F856 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC9588120D2115A0086F856 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC9588820D2115A0086F856;
+			remoteInfo = YModemCs;
+		};
+		BCC958AD20D2115B0086F856 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCC9588120D2115A0086F856 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC9588820D2115A0086F856;
+			remoteInfo = YModemCs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5275F4DF20D51CBF39EA3548 /* Pods-YModemCs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YModemCs.release.xcconfig"; path = "Pods/Target Support Files/Pods-YModemCs/Pods-YModemCs.release.xcconfig"; sourceTree = "<group>"; };
+		BC4F740520D352B5004505E4 /* NoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
+		BC4F740620D352B5004505E4 /* NoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
+		BC4F740820D3533B004505E4 /* DownLoadBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownLoadBtn.h; sourceTree = "<group>"; };
+		BC4F740920D3533B004505E4 /* DownLoadBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownLoadBtn.m; sourceTree = "<group>"; };
+		BC4F740B20D3537A004505E4 /* DownLoadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownLoadView.h; sourceTree = "<group>"; };
+		BC4F740C20D3537A004505E4 /* DownLoadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DownLoadView.m; sourceTree = "<group>"; };
+		BCC9588920D2115A0086F856 /* YModemCs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YModemCs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC9588C20D2115A0086F856 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BCC9588D20D2115A0086F856 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BCC9588F20D2115A0086F856 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BCC9589020D2115A0086F856 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BCC9589320D2115A0086F856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCC9589520D2115A0086F856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCC9589820D2115A0086F856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BCC9589A20D2115A0086F856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC9589B20D2115A0086F856 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BCC958A120D2115B0086F856 /* YModemCsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YModemCsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC958A520D2115B0086F856 /* YModemCsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YModemCsTests.m; sourceTree = "<group>"; };
+		BCC958A720D2115B0086F856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC958AC20D2115B0086F856 /* YModemCsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YModemCsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC958B020D2115B0086F856 /* YModemCsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YModemCsUITests.m; sourceTree = "<group>"; };
+		BCC958B220D2115B0086F856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC958C020D213760086F856 /* MainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCell.h; sourceTree = "<group>"; };
+		BCC958C120D213760086F856 /* MainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCell.m; sourceTree = "<group>"; };
+		BCC958C520D213D70086F856 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		BCC958C820D213F80086F856 /* CommonUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
+		BCC958C920D213F80086F856 /* CommonUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUtil.m; sourceTree = "<group>"; };
+		BCC958CB20D214320086F856 /* BTAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAlertController.h; sourceTree = "<group>"; };
+		BCC958CC20D214320086F856 /* BTAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTAlertController.m; sourceTree = "<group>"; };
+		BCC958CF20D2146F0086F856 /* DeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceModel.h; sourceTree = "<group>"; };
+		BCC958D020D2146F0086F856 /* DeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceModel.m; sourceTree = "<group>"; };
+		BCC958D320D214990086F856 /* BlueHelp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueHelp.h; sourceTree = "<group>"; };
+		BCC958D420D214990086F856 /* BlueHelp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueHelp.m; sourceTree = "<group>"; };
+		BCC958D720D214F40086F856 /* YModem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = YModem.c; sourceTree = "<group>"; };
+		BCC958D820D214F40086F856 /* YModem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YModem.h; sourceTree = "<group>"; };
+		BCC958DF20D21D160086F856 /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		BCC958E020D21D160086F856 /* MainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		BCC958E320D21D4D0086F856 /* MainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		BCC958E420D21D4D0086F856 /* MainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		BCC958E620D229410086F856 /* YModemUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YModemUtil.h; sourceTree = "<group>"; };
+		BCC958E720D229410086F856 /* YModemUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YModemUtil.m; sourceTree = "<group>"; };
+		BCC958EB20D242FC0086F856 /* OTAFileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTAFileCell.h; sourceTree = "<group>"; };
+		BCC958EC20D242FC0086F856 /* OTAFileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTAFileCell.m; sourceTree = "<group>"; };
+		BCC958F020D2435F0086F856 /* FileOTAView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileOTAView.h; sourceTree = "<group>"; };
+		BCC958F120D2435F0086F856 /* FileOTAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileOTAView.m; sourceTree = "<group>"; };
+		BCC958F320D243A30086F856 /* FileOTAController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileOTAController.h; sourceTree = "<group>"; };
+		BCC958F420D243A30086F856 /* FileOTAController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileOTAController.m; sourceTree = "<group>"; };
+		D00BF10054200B0F5196A874 /* libPods-YModemCs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YModemCs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42A7ABAACECD11999B33E79 /* Pods-YModemCs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YModemCs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YModemCs/Pods-YModemCs.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCC9588620D2115A0086F856 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862DE35EBDBA460C2C11B769 /* libPods-YModemCs.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC9589E20D2115B0086F856 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC958A920D2115B0086F856 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F88260BAFFB387E4C0BCF3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F42A7ABAACECD11999B33E79 /* Pods-YModemCs.debug.xcconfig */,
+				5275F4DF20D51CBF39EA3548 /* Pods-YModemCs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BC4F740320D35280004505E4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BC4F740420D35286004505E4 /* DownLoadView */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BC4F740420D35286004505E4 /* DownLoadView */ = {
+			isa = PBXGroup;
+			children = (
+				BC4F740520D352B5004505E4 /* NoteView.h */,
+				BC4F740620D352B5004505E4 /* NoteView.m */,
+				BC4F740820D3533B004505E4 /* DownLoadBtn.h */,
+				BC4F740920D3533B004505E4 /* DownLoadBtn.m */,
+				BC4F740B20D3537A004505E4 /* DownLoadView.h */,
+				BC4F740C20D3537A004505E4 /* DownLoadView.m */,
+			);
+			path = DownLoadView;
+			sourceTree = "<group>";
+		};
+		BC4F740F20D365B2004505E4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BCC9588C20D2115A0086F856 /* AppDelegate.h */,
+				BCC9588D20D2115A0086F856 /* AppDelegate.m */,
+				BCC9589220D2115A0086F856 /* Main.storyboard */,
+				BCC9589520D2115A0086F856 /* Assets.xcassets */,
+				BCC9589720D2115A0086F856 /* LaunchScreen.storyboard */,
+				BCC9589B20D2115A0086F856 /* main.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BC4F741020D365D0004505E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCC9588F20D2115A0086F856 /* ViewController.h */,
+				BCC9589020D2115A0086F856 /* ViewController.m */,
+				BCC958DF20D21D160086F856 /* MainController.h */,
+				BCC958E020D21D160086F856 /* MainController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCC9588020D2115A0086F856 = {
+			isa = PBXGroup;
+			children = (
+				BCC9588B20D2115A0086F856 /* YModemCs */,
+				BCC958A420D2115B0086F856 /* YModemCsTests */,
+				BCC958AF20D2115B0086F856 /* YModemCsUITests */,
+				BCC9588A20D2115A0086F856 /* Products */,
+				1F88260BAFFB387E4C0BCF3A /* Pods */,
+				FFC23E88857FD90BB294C21C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BCC9588A20D2115A0086F856 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCC9588920D2115A0086F856 /* YModemCs.app */,
+				BCC958A120D2115B0086F856 /* YModemCsTests.xctest */,
+				BCC958AC20D2115B0086F856 /* YModemCsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCC9588B20D2115A0086F856 /* YModemCs */ = {
+			isa = PBXGroup;
+			children = (
+				BCC9589A20D2115A0086F856 /* Info.plist */,
+				BC4F740F20D365B2004505E4 /* Main */,
+				BCC958BE20D213480086F856 /* Class */,
+			);
+			path = YModemCs;
+			sourceTree = "<group>";
+		};
+		BCC958A420D2115B0086F856 /* YModemCsTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958A520D2115B0086F856 /* YModemCsTests.m */,
+				BCC958A720D2115B0086F856 /* Info.plist */,
+			);
+			path = YModemCsTests;
+			sourceTree = "<group>";
+		};
+		BCC958AF20D2115B0086F856 /* YModemCsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958B020D2115B0086F856 /* YModemCsUITests.m */,
+				BCC958B220D2115B0086F856 /* Info.plist */,
+			);
+			path = YModemCsUITests;
+			sourceTree = "<group>";
+		};
+		BCC958BE20D213480086F856 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				BC4F741020D365D0004505E4 /* Controller */,
+				BCC958E220D21D360086F856 /* View */,
+				BCC958DD20D21AE40086F856 /* File(文件) */,
+				BCC958D620D214D10086F856 /* YModem */,
+				BCC958BF20D213550086F856 /* Cell */,
+				BCC958C320D213A60086F856 /* Utils */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		BCC958BF20D213550086F856 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958C020D213760086F856 /* MainCell.h */,
+				BCC958C120D213760086F856 /* MainCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BCC958C320D213A60086F856 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC4F740320D35280004505E4 /* view */,
+				BCC958D220D214870086F856 /* ble */,
+				BCC958CE20D214590086F856 /* model */,
+				BCC958C420D213B30086F856 /* util */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BCC958C420D213B30086F856 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958C520D213D70086F856 /* Constants.h */,
+				BCC958C820D213F80086F856 /* CommonUtil.h */,
+				BCC958C920D213F80086F856 /* CommonUtil.m */,
+				BCC958CB20D214320086F856 /* BTAlertController.h */,
+				BCC958CC20D214320086F856 /* BTAlertController.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		BCC958CE20D214590086F856 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958CF20D2146F0086F856 /* DeviceModel.h */,
+				BCC958D020D2146F0086F856 /* DeviceModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BCC958D220D214870086F856 /* ble */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958D320D214990086F856 /* BlueHelp.h */,
+				BCC958D420D214990086F856 /* BlueHelp.m */,
+			);
+			path = ble;
+			sourceTree = "<group>";
+		};
+		BCC958D620D214D10086F856 /* YModem */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958D720D214F40086F856 /* YModem.c */,
+				BCC958D820D214F40086F856 /* YModem.h */,
+				BCC958E620D229410086F856 /* YModemUtil.h */,
+				BCC958E720D229410086F856 /* YModemUtil.m */,
+			);
+			path = YModem;
+			sourceTree = "<group>";
+		};
+		BCC958DD20D21AE40086F856 /* File(文件) */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958EF20D243420086F856 /* View */,
+				BCC958EE20D243360086F856 /* Controller */,
+				BCC958EA20D242E30086F856 /* Cell */,
+			);
+			path = "File(文件)";
+			sourceTree = "<group>";
+		};
+		BCC958E220D21D360086F856 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958E320D21D4D0086F856 /* MainView.h */,
+				BCC958E420D21D4D0086F856 /* MainView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCC958EA20D242E30086F856 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958EB20D242FC0086F856 /* OTAFileCell.h */,
+				BCC958EC20D242FC0086F856 /* OTAFileCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BCC958EE20D243360086F856 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958F320D243A30086F856 /* FileOTAController.h */,
+				BCC958F420D243A30086F856 /* FileOTAController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BCC958EF20D243420086F856 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCC958F020D2435F0086F856 /* FileOTAView.h */,
+				BCC958F120D2435F0086F856 /* FileOTAView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FFC23E88857FD90BB294C21C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D00BF10054200B0F5196A874 /* libPods-YModemCs.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCC9588820D2115A0086F856 /* YModemCs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCC958B520D2115B0086F856 /* Build configuration list for PBXNativeTarget "YModemCs" */;
+			buildPhases = (
+				C8F91FE12613263D9E8BB232 /* [CP] Check Pods Manifest.lock */,
+				BCC9588520D2115A0086F856 /* Sources */,
+				BCC9588620D2115A0086F856 /* Frameworks */,
+				BCC9588720D2115A0086F856 /* Resources */,
+				350898C3D56CA0327C0A9DC9 /* [CP] Embed Pods Frameworks */,
+				5EA1DF11230216A376A54878 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YModemCs;
+			productName = YModemCs;
+			productReference = BCC9588920D2115A0086F856 /* YModemCs.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCC958A020D2115B0086F856 /* YModemCsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCC958B820D2115B0086F856 /* Build configuration list for PBXNativeTarget "YModemCsTests" */;
+			buildPhases = (
+				BCC9589D20D2115B0086F856 /* Sources */,
+				BCC9589E20D2115B0086F856 /* Frameworks */,
+				BCC9589F20D2115B0086F856 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCC958A320D2115B0086F856 /* PBXTargetDependency */,
+			);
+			name = YModemCsTests;
+			productName = YModemCsTests;
+			productReference = BCC958A120D2115B0086F856 /* YModemCsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BCC958AB20D2115B0086F856 /* YModemCsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCC958BB20D2115B0086F856 /* Build configuration list for PBXNativeTarget "YModemCsUITests" */;
+			buildPhases = (
+				BCC958A820D2115B0086F856 /* Sources */,
+				BCC958A920D2115B0086F856 /* Frameworks */,
+				BCC958AA20D2115B0086F856 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCC958AE20D2115B0086F856 /* PBXTargetDependency */,
+			);
+			name = YModemCsUITests;
+			productName = YModemCsUITests;
+			productReference = BCC958AC20D2115B0086F856 /* YModemCsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCC9588120D2115A0086F856 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = GoDream;
+				TargetAttributes = {
+					BCC9588820D2115A0086F856 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					BCC958A020D2115B0086F856 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BCC9588820D2115A0086F856;
+					};
+					BCC958AB20D2115B0086F856 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BCC9588820D2115A0086F856;
+					};
+				};
+			};
+			buildConfigurationList = BCC9588420D2115A0086F856 /* Build configuration list for PBXProject "YModemCs" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCC9588020D2115A0086F856;
+			productRefGroup = BCC9588A20D2115A0086F856 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCC9588820D2115A0086F856 /* YModemCs */,
+				BCC958A020D2115B0086F856 /* YModemCsTests */,
+				BCC958AB20D2115B0086F856 /* YModemCsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCC9588720D2115A0086F856 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC9589920D2115A0086F856 /* LaunchScreen.storyboard in Resources */,
+				BCC9589620D2115A0086F856 /* Assets.xcassets in Resources */,
+				BCC9589420D2115A0086F856 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC9589F20D2115B0086F856 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC958AA20D2115B0086F856 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		350898C3D56CA0327C0A9DC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YModemCs/Pods-YModemCs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EA1DF11230216A376A54878 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YModemCs/Pods-YModemCs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8F91FE12613263D9E8BB232 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCC9588520D2115A0086F856 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC958CD20D214320086F856 /* BTAlertController.m in Sources */,
+				BCC958CA20D213F80086F856 /* CommonUtil.m in Sources */,
+				BCC958E120D21D160086F856 /* MainController.m in Sources */,
+				BCC958D120D2146F0086F856 /* DeviceModel.m in Sources */,
+				BCC9589120D2115A0086F856 /* ViewController.m in Sources */,
+				BCC958E520D21D4D0086F856 /* MainView.m in Sources */,
+				BCC958F520D243A30086F856 /* FileOTAController.m in Sources */,
+				BCC958ED20D242FC0086F856 /* OTAFileCell.m in Sources */,
+				BCC9589C20D2115A0086F856 /* main.m in Sources */,
+				BCC958C220D213760086F856 /* MainCell.m in Sources */,
+				BC4F740D20D3537A004505E4 /* DownLoadView.m in Sources */,
+				BC4F740A20D3533B004505E4 /* DownLoadBtn.m in Sources */,
+				BCC958D520D214990086F856 /* BlueHelp.m in Sources */,
+				BCC958D920D214F40086F856 /* YModem.c in Sources */,
+				BC4F740720D352B5004505E4 /* NoteView.m in Sources */,
+				BCC9588E20D2115A0086F856 /* AppDelegate.m in Sources */,
+				BCC958E820D229410086F856 /* YModemUtil.m in Sources */,
+				BCC958F220D2435F0086F856 /* FileOTAView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC9589D20D2115B0086F856 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC958A620D2115B0086F856 /* YModemCsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC958A820D2115B0086F856 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC958B120D2115B0086F856 /* YModemCsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCC958A320D2115B0086F856 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCC9588820D2115A0086F856 /* YModemCs */;
+			targetProxy = BCC958A220D2115B0086F856 /* PBXContainerItemProxy */;
+		};
+		BCC958AE20D2115B0086F856 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCC9588820D2115A0086F856 /* YModemCs */;
+			targetProxy = BCC958AD20D2115B0086F856 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCC9589220D2115A0086F856 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCC9589320D2115A0086F856 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BCC9589720D2115A0086F856 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCC9589820D2115A0086F856 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCC958B320D2115B0086F856 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BCC958B420D2115B0086F856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCC958B620D2115B0086F856 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F42A7ABAACECD11999B33E79 /* Pods-YModemCs.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 76BTU4NBN5;
+				INFOPLIST_FILE = YModemCs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ymd.YModemCs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCC958B720D2115B0086F856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5275F4DF20D51CBF39EA3548 /* Pods-YModemCs.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 76BTU4NBN5;
+				INFOPLIST_FILE = YModemCs/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ymd.YModemCs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BCC958B920D2115B0086F856 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 76BTU4NBN5;
+				INFOPLIST_FILE = YModemCsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ymd.YModemCsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YModemCs.app/YModemCs";
+			};
+			name = Debug;
+		};
+		BCC958BA20D2115B0086F856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 76BTU4NBN5;
+				INFOPLIST_FILE = YModemCsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ymd.YModemCsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YModemCs.app/YModemCs";
+			};
+			name = Release;
+		};
+		BCC958BC20D2115B0086F856 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 76BTU4NBN5;
+				INFOPLIST_FILE = YModemCsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ymd.YModemCsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YModemCs;
+			};
+			name = Debug;
+		};
+		BCC958BD20D2115B0086F856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 76BTU4NBN5;
+				INFOPLIST_FILE = YModemCsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ymd.YModemCsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YModemCs;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCC9588420D2115A0086F856 /* Build configuration list for PBXProject "YModemCs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCC958B320D2115B0086F856 /* Debug */,
+				BCC958B420D2115B0086F856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCC958B520D2115B0086F856 /* Build configuration list for PBXNativeTarget "YModemCs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCC958B620D2115B0086F856 /* Debug */,
+				BCC958B720D2115B0086F856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCC958B820D2115B0086F856 /* Build configuration list for PBXNativeTarget "YModemCsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCC958B920D2115B0086F856 /* Debug */,
+				BCC958BA20D2115B0086F856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCC958BB20D2115B0086F856 /* Build configuration list for PBXNativeTarget "YModemCsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCC958BC20D2115B0086F856 /* Debug */,
+				BCC958BD20D2115B0086F856 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCC9588120D2115A0086F856 /* Project object */;
+}
