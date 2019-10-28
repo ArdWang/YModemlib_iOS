@@ -1,5 +1,44 @@
-# YModemOCDemo
+# YModemlib_iOS
 This is iOS YModem
+
+### 本次更新增加了新的功能 可以解决一些直接是 NSData 数据的传输
+
+```
+
+//NSData格式
+- (void)setFirmwareHandlerDFUDataWithOrderStatus:(OrderStatus)status fileData:(NSData *)data completion:(void(^)(NSInteger current,NSInteger total,NSString *msg))complete;
+
+```
+
+### 更新一些条件的判断 防止代码在更新过程中出现发送数据错误
+
+```
+
+typedef enum : NSUInteger {
+    OTAStatusNONE,
+    OTAStatusWaiting,
+    OTAStatusFirstOrder,
+    OTAStatusBinOrder,
+    OTAStatusBinOrderDone,
+    OTAStatusEnd,
+    OTAStatusCAN,
+    OTAStatusEOT,
+} OTAStatus;
+
+
+typedef enum : NSUInteger {
+    OrderStatusNONE,
+    OrderStatusC,
+    OrderStatusACK,
+    OrderStatusNAK,
+    OrderStatusCAN,
+    OrderStatusFirst,
+} OrderStatus;
+
+
+```
+
+
 
 原理
 
