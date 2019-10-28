@@ -69,15 +69,15 @@ void PrepareIntialPacket(uint8_t *p_data, const uint8_t *p_file_name, uint32_t l
     
 }
 
-void PreparePacket(uint8_t *p_source, uint8_t *p_packet, uint8_t pkt_nr, uint32_t size_blk)
+void PreparePacket(uint8_t *p_source, uint8_t *p_packet, uint32_t pack_size, uint8_t pkt_nr, uint32_t size_blk)
 {
     uint8_t *p_record;
     uint32_t i, size, packet_size;
     
     /* Make first three packet */
-    packet_size = PACKET_1K_SIZE;// ? PACKET_1K_SIZE : PACKET_SIZE;
+    packet_size = pack_size;// ? PACKET_1K_SIZE : PACKET_SIZE;
     size = size_blk < packet_size ? size_blk : packet_size;
-    if (packet_size == PACKET_1K_SIZE)
+    if (packet_size == pack_size)
     {
         p_packet[PACKET_START_INDEX] = STX;
     }

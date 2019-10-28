@@ -25,4 +25,6 @@
 
 @property(strong,nonatomic) NSString *filePath;
 
+@property(nonatomic,assign) NSUInteger orderStatus;
+
 @end

@@ -51,7 +51,8 @@
 #define PACKET_TRAILER_SIZE     ((uint32_t)2)
 #define PACKET_OVERHEAD_SIZE    (PACKET_HEADER_SIZE + PACKET_TRAILER_SIZE - 1)
 #define PACKET_SIZE             ((uint32_t)128)
-#define PACKET_1K_SIZE          ((uint32_t)256)
+//默认为 1024大小
+#define PACKET_1K_SIZE          ((uint32_t)1024)
 
 /* /-------- Packet in IAP memory ------------------------------------------\
  * | 0      |  1    |  2     |  3   |  4      | ... | n+4     | n+5  | n+6  |
@@ -92,12 +93,14 @@
 
 #define OTAUPEND 10000
 
-
 #endif /* YModem_h */
 
 void PrepareIntialPacket(uint8_t *p_data, const uint8_t *p_file_name, uint32_t length);
-void PreparePacket(uint8_t *p_source, uint8_t *p_packet, uint8_t pkt_nr, uint32_t size_blk);
+
+void PreparePacket(uint8_t *p_source, uint8_t *p_packet, uint32_t pack_size, uint8_t pkt_nr, uint32_t size_blk);
+
 void PrepareEndPacket(uint8_t *p_packet);
+
 uint16_t Cccal_CRC16(const uint8_t* p_data, uint32_t size);
 
 

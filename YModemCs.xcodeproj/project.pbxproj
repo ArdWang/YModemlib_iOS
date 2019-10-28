@@ -52,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		5275F4DF20D51CBF39EA3548 /* Pods-YModemCs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YModemCs.release.xcconfig"; path = "Pods/Target Support Files/Pods-YModemCs/Pods-YModemCs.release.xcconfig"; sourceTree = "<group>"; };
+		BC260DA62366CB0500D329D4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		BC4F740520D352B5004505E4 /* NoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteView.h; sourceTree = "<group>"; };
 		BC4F740620D352B5004505E4 /* NoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteView.m; sourceTree = "<group>"; };
 		BC4F740820D3533B004505E4 /* DownLoadBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownLoadBtn.h; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		BCC958B220D2115B0086F856 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC958C020D213760086F856 /* MainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainCell.h; sourceTree = "<group>"; };
 		BCC958C120D213760086F856 /* MainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainCell.m; sourceTree = "<group>"; };
-		BCC958C520D213D70086F856 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		BCC958C820D213F80086F856 /* CommonUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUtil.h; sourceTree = "<group>"; };
 		BCC958C920D213F80086F856 /* CommonUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonUtil.m; sourceTree = "<group>"; };
 		BCC958CB20D214320086F856 /* BTAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAlertController.h; sourceTree = "<group>"; };
@@ -269,11 +269,11 @@
 		BCC958C420D213B30086F856 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				BCC958C520D213D70086F856 /* Constants.h */,
 				BCC958C820D213F80086F856 /* CommonUtil.h */,
 				BCC958C920D213F80086F856 /* CommonUtil.m */,
 				BCC958CB20D214320086F856 /* BTAlertController.h */,
 				BCC958CC20D214320086F856 /* BTAlertController.m */,
+				BC260DA62366CB0500D329D4 /* Constants.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -727,7 +727,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 76BTU4NBN5;
+				DEVELOPMENT_TEAM = 4B5F6ELE34;
 				INFOPLIST_FILE = YModemCs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -743,7 +743,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 76BTU4NBN5;
+				DEVELOPMENT_TEAM = 4B5F6ELE34;
 				INFOPLIST_FILE = YModemCs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

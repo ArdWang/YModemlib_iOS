@@ -23,7 +23,8 @@
     self.mainView.frame = self.view.bounds;
     self.mainView.delegate = self;
     
-    self.ymodemUtil = [[YModemUtil alloc] init];
+    //默认为1024
+    self.ymodemUtil = [[YModemUtil alloc] init:1024];
     self.ymodemUtil.delegate = self;
     
     //连接OTA的时候发送广播
@@ -38,7 +39,34 @@
 -(void)otaCompletion:(NSNotification*)notification{
     NSDictionary *ota = [notification userInfo];
     NSString *otadata = [ota objectForKey:@"otaData"];
-    [self.ymodemUtil setOTADataWithOrderStatus:otadata fileName:self.fileName];
+     if([otadata isEqual:OTAC]){
+           self.orderStatus = OrderStatusC;
+       }else if([otadata isEqual:OTASTART]){
+           self.orderStatus = OrderStatusFirst;
+       }else if([otadata isEqual:OTAACK]){
+           self.orderStatus = OrderStatusACK;
+       }else if([otadata isEqual:OTANAK]){
+           self.orderStatus = OrderStatusNAK;
+       }
+       
+       __weak typeof(self) weakSelf = self;
+       
+       [self.ymodemUtil setFirmwareHandleOTADataWithOrderStatus:self.orderStatus fileName:self.fileName completion:^(NSInteger current,NSInteger total,NSString *msg){
+           float much = (float)current/total;
+           if(much<=1.0){
+               if(weakSelf.mainView.downLoadView.musicalProgress<=1.0){
+                   weakSelf.mainView.downLoadView.musicalProgress=much;
+                   if ((int)(weakSelf.mainView.downLoadView.musicalProgress*100)%5==0) {
+                       [weakSelf.mainView.downLoadView startDownLoad];
+                   }
+               }else{
+                   weakSelf.mainView.downLoadView.musicDownLoadLab.text = @"Upgrade Complete!";
+               }
+           }
+           
+           if(![msg isEqualToString:@""]&&msg!=nil)
+               weakSelf.mainView.downLoadView.musicDownLoadLab.text = msg;
+       }];
 }
 
 /*
@@ -74,22 +102,6 @@
     [self.navigationController pushViewController:file animated:YES];
 }
 
-/*
-     从YModem里面 返回当前的进度条代理
- */
--(void)onCurrent:(int)current onTotal:(int)total{
-    float much = (float)current/total;
-    if(much<=1.0){
-        if(self.mainView.downLoadView.musicalProgress<=1.0){
-            self.mainView.downLoadView.musicalProgress=much;
-            if ((int)(self.mainView.downLoadView.musicalProgress*100)%5==0) {
-                [self.mainView.downLoadView startDownLoad];
-            }
-        }else{
-            self.mainView.downLoadView.musicDownLoadLab.text = @"升级完成";
-        }
-    }
-}
 
 /*
     本次代理是从YModemUtil里面返回回来的 蓝牙写入数据代理
