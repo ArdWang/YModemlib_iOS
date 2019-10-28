@@ -36,6 +36,121 @@ typedef enum : NSUInteger {
 } OrderStatus;
 
 
+# 在原来的代码基础上面增加了一些判断
+#pragma mark - 下位机数据File传输并处理 
+- (void)setFirmwareHandleOTADataWithOrderStatus:(OrderStatus)status fileName:(NSString *)filename completion:(void(^)(NSInteger current,NSInteger total,NSString *msg))complete{
+    //增加为空防止出现空值错误
+    NSString *msgg=@"";
+    switch (status) {
+        //Send Head Package
+        case OrderStatusC:{
+            //msgg = @"开始发送头包";
+            NSData *data_first = [self prepareFirstPacketWithFileName:filename];
+            if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                [self.delegate onWriteBleData:data_first];
+            }
+            self.status = OTAStatusFirstOrder;
+            break;
+        }
+            
+        //Send First Package
+        case OrderStatusFirst:{
+            if(self.status == OTAStatusFirstOrder){
+                //msgg=@"开始发送第一包";
+                // 正式包数组 获取所有拆解包放入数组中存储
+                if (index_packet != index_packet_cache) {
+                    if (!self.packetArray) {
+                        self.packetArray = [self preparePacketWithFileName:filename];
+                    }
+                    NSData *data = self.packetArray[index_packet];
+                    
+                    //写入蓝牙数据
+                    if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                        [self.delegate onWriteBleData:data];
+                    }
+                    index_packet_cache = index_packet;
+                    self.status = OTAStatusBinOrder;
+                }
+            }
+            
+            //结束包的时候
+            if(self.status == OTAStatusBinOrderDone){
+                if(index_packet >= self.packetArray.count){
+                    NSData *data = [self prepareEndPacket];
+                    if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                        [self.delegate onWriteBleData:data];
+                    }
+                    index_packet = OTAUPEND;
+                }
+                //结束标记位
+                self.status = OTAStatusEnd;
+            }
+            
+            break;
+        }
+            
+        case OrderStatusACK:{
+            if(self.status == OTAStatusBinOrder){
+                index_packet++;
+                if (index_packet < self.packetArray.count) {
+                    if (index_packet != index_packet_cache) {
+                        if (!self.packetArray) {
+                            self.packetArray = [self preparePacketWithFileName:filename];
+                        }
+                        NSData *data = self.packetArray[index_packet];
+                        //拆包发送
+                        if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                            [self.delegate onWriteBleData:data];
+                        }
+                        [NSThread sleepForTimeInterval:0.02];
+                    }
+                    index_packet_cache = index_packet;
+                    self.status = OTAStatusBinOrder;
+                }else{
+                    // 所有正式文件包发送完成，发送结束OTA命令
+                    Byte byte4[] = {0x04};
+                    NSData *data23 = [NSData dataWithBytes:byte4 length:sizeof(byte4)];
+                    //msgg=@"准备结束第一次EOT";
+                    if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                        [self.delegate onWriteBleData:data23];
+                    }
+                    self.status = OTAStatusEOT;
+                }
+            }
+            break;
+        }
+            
+        case OrderStatusNAK:{
+            if(self.status == OTAStatusEOT){
+                if(index_packet >= self.packetArray.count){
+                    Byte byte4[] = {0x04};
+                    NSData *data23 = [NSData dataWithBytes:byte4 length:sizeof(byte4)];
+                    //msgg=@"准备结束第二次EOT";
+                    if([self.delegate respondsToSelector:@selector(onWriteBleData:)]){
+                        [self.delegate onWriteBleData:data23];
+                    }
+                    self.status = OTAStatusBinOrderDone;
+                }
+            }else{
+                //返回你自己的代码
+                msgg=@"OTA Upgared Fail...";
+                [self stopOtaUpgrad];
+            }
+            break;
+        }
+            
+            
+        default:
+            break;
+    }
+    
+    if(self.packetArray.count>0){
+        complete(index_packet,self.packetArray.count,msgg);
+    }
+}
+
+
+
 ```
 
 
