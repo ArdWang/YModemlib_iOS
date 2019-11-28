@@ -1,6 +1,46 @@
 # YModemlib_iOS
 This is iOS YModem
 
+### 本次更新增加了可以设置发送数据大小的修改 可以随意设置你发送数据大小
+
+```objective-c
+
+YmodemUtil.m 里面
+- (instancetype)init:(uint32_t)size
+{
+    self = [super init];
+    if (self) {
+        self.status = OTAStatusNONE;
+        index_packet = 0;
+        index_packet_cache = -1;
+        sendSize = size;
+    }
+    return self;
+}
+
+调用 MainController.m
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.mainView = [MainView new];
+    [self.view addSubview:self.mainView];
+    self.mainView.frame = self.view.bounds;
+    self.mainView.delegate = self;
+    
+    //默认为1024 可以根据你传的数据来修改
+    self.ymodemUtil = [[YModemUtil alloc] init:1024];
+    self.ymodemUtil.delegate = self;
+    
+    //连接OTA的时候发送广播
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(otaCompletion:) name:@"otaNofiction" object:nil];
+    //断开蓝牙连接的广播
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(disContentBle:) name:@"disNofiction" object:nil];
+}
+
+```
+
+
 ### 本次更新增加了新的功能 可以解决一些直接是 NSData 数据的传输
 
 ```objective-c
