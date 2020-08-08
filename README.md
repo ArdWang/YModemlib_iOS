@@ -1,6 +1,45 @@
 # YModemlib_iOS
 This is iOS YModem
 
+
+### 本次更新时间 2020 8/8
+
+更新内容：增加了其他的DFUUpatedataUtil 
+
+数据拆包采用更简单的oc语言拆包 256 + 2个 CRC 校验 方式可以自行更改
+
+总共是258个字节 ios蓝牙最大发送数据 好像是 400多 字节
+
+这种协议是在Ymodem协议上精简版 ，可以尝试去试下 ，个人感觉产品使用很好， Ymodem协议在产品上出现了Bug最后采用这种简单的方式
+
+
+下个版本更新 添加 osx 桌面版的 USB的传输数据协议 windows版本采用的是 c# 语言的 Java我测试过没有 c#的速度快并支持不好
+
+
+```
+/**
+ * @brief  Cal CRC16 for YModem Packet
+ * @retval None
+ */
+uint16_t Cccal_CRC16(const uint8_t* p_data, uint32_t size)
+{
+    uint32_t crc = 0;
+    const uint8_t* dataEnd = p_data+size;
+    
+    while(p_data < dataEnd)
+        crc = UpdateCRC16(crc, *p_data++);
+    
+    crc = UpdateCRC16(crc, 0);
+    crc = UpdateCRC16(crc, 0);
+    
+    return crc&0xffffu;
+}
+
+```
+
+
+
+
 ### 本次更新增加了可以设置发送数据大小的修改 可以随意设置你发送数据大小
 
 ```objective-c
@@ -192,6 +231,8 @@ typedef enum : NSUInteger {
 
 
 ```
+
+
 
 
 
