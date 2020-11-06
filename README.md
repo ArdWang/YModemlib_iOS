@@ -10,6 +10,10 @@ This is iOS YModem
 
 最新版本查看
 
+https://cocoapods.org/pods/YModemlib_iOSN
+
+https://github.com/QuickDevelopers/YModemlib_iOSN
+
 ```
 https://cocoapods.org/pods/YModemlib_iOSN
 
