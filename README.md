@@ -12,12 +12,6 @@ https://cocoapods.org/pods/YModemLib
 
 https://github.com/QuickDevelopers/YModemLib
 
-```
-https://cocoapods.org/pods/YModemlib_iOSN
-
-https://github.com/QuickDevelopers/YModemlib_iOSN
-
-```
 
 增加了实用 pod导入
 
