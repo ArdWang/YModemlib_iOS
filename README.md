@@ -1,7 +1,21 @@
 # YModemlib_iOS
 This is iOS YModem
 
+<br>
+<a href="https://raw.githubusercontent.com/QuickDevelopers/YModemlib_iOSN/master/LICENSE" rel="nofollow"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="GitHub license" data-canonical-src="https://img.shields.io/badge/license-MIT-lightgrey.svg" style="max-width:100%;"></a> <a href="https://cocoapods.org/pods/YModemlib_iOSN" rel="nofollow"><img src="https://img.shields.io/cocoapods/v/YModemlib_iOSN.svg" alt="CocoaPods Compatible" data-canonical-src="https://img.shields.io/cocoapods/v/YModemlib_iOSN.svg" style="max-width:100%;"></a> <a href="http://cocoadocs.org/docsets/YModemlib_iOSN" rel="nofollow"><img src="https://img.shields.io/cocoapods/p/YModemlib_iOSN.svg?style=flat" alt="Platform" data-canonical-src="https://img.shields.io/cocoapods/p/YModemlib_iOSN.svg?style=flat" style="max-width:100%;"></a>
+<br>
+
+
 ### 本次更新时间 2020 11/6
+
+最新版本查看
+
+```
+https://cocoapods.org/pods/YModemlib_iOSN
+
+https://github.com/QuickDevelopers/YModemlib_iOSN
+
+```
 
 增加了实用 pod导入
 
