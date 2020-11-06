@@ -10,9 +10,9 @@ This is iOS YModem
 
 最新版本查看
 
-https://cocoapods.org/pods/YModemlib_iOSN
+https://cocoapods.org/pods/YModemLib
 
-https://github.com/QuickDevelopers/YModemlib_iOSN
+https://github.com/QuickDevelopers/YModemLib
 
 ```
 https://cocoapods.org/pods/YModemlib_iOSN
@@ -26,7 +26,7 @@ https://github.com/QuickDevelopers/YModemlib_iOSN
 ```shell
 
 target 'MyApp' do
-  pod 'YModemlib_iOSN', '~> 1.0.5'
+  pod 'YModemLib', '~> 1.0.1'
 end
 
 ```
