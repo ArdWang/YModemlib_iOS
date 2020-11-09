@@ -12,6 +12,19 @@ https://cocoapods.org/pods/YModemLib
 
 https://github.com/QuickDevelopers/YModemLib
 
+使用
+
+swift
+ ```
+ import YModemLib
+ ```
+ 
+ oc
+ 
+ ```
+#import YModemLib.h
+
+ ```
 
 增加了实用 pod导入
 
