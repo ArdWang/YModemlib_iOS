@@ -4,6 +4,8 @@
 <a href="https://raw.githubusercontent.com/QuickDevelopers/YModemLib/master/LICENSE" rel="nofollow"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="GitHub license" data-canonical-src="https://img.shields.io/badge/license-MIT-lightgrey.svg" style="max-width:100%;"></a> <a href="https://cocoapods.org/pods/YModemLib" rel="nofollow"><img src="https://img.shields.io/cocoapods/v/YModemLib.svg" alt="CocoaPods Compatible" data-canonical-src="https://img.shields.io/cocoapods/v/YModemLib.svg" style="max-width:100%;"></a> <a href="http://cocoadocs.org/docsets/YModemLib" rel="nofollow"><img src="https://img.shields.io/cocoapods/p/YModemLib.svg?style=flat" alt="Platform" data-canonical-src="https://img.shields.io/cocoapods/p/YModemLib.svg?style=flat" style="max-width:100%;"></a>
 <br>
 
+Android版本的请看： https://github.com/ArdWang/YModemlib_Android
+
 ### 本次更新时间 2020 11/6
 
 最新版本查看
