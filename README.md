@@ -6,15 +6,15 @@
 
 Android版本的请看： https://github.com/ArdWang/YModemlib_Android
 
-### 本次更新时间 2020 11/6
+### Update 2020 11/6
 
-最新版本查看
+View the latest version
 
 https://cocoapods.org/pods/YModemLib
 
 https://github.com/QuickDevelopers/YModemLib
 
-使用
+Use:
 
 swift
  ```
@@ -28,7 +28,7 @@ swift
 
  ```
 
-增加了实用 pod导入
+Added practical pod import
 
 ```shell
 
@@ -38,7 +38,7 @@ end
 
 ```
 
-如果你使用的时候报以下的错误
+If you report the following error when using
 
 ```java
 [!] CocoaPods could not find compatible versions for pod "BleManageSwift":
@@ -61,18 +61,18 @@ Then run a pod install inside your terminal, or from CocoaPods.app.
 Alternatively to give it a test run, run the command:
 
 
-### 本次更新时间 2020 8/8
+### Update 2020 8/8
 
-更新内容：增加了其他的DFUUpatedataUtil 
+Update content: Added other DFUUpatedataUtil
 
-数据拆包采用更简单的oc语言拆包 256 + 2个 CRC 校验 方式可以自行更改
+Data unpacking adopts simpler oc language unpacking 256 + 2 CRC check method can be changed by yourself
 
-总共是258个字节 ios蓝牙最大发送数据 好像是 400多 字节
+The total is 258 bytes. The maximum data sent by ios Bluetooth seems to be more than 400 bytes.
 
-这种协议是在Ymodem协议上精简版 ，可以尝试去试下 ，个人感觉产品使用很好， Ymodem协议在产品上出现了Bug最后采用这种简单的方式
+This protocol is a streamlined version of the Ymodem protocol. You can try it. I personally feel that the product is used very well. The Ymodem protocol has a bug on the product and finally adopts this simple method.
 
 
-下个版本更新 添加 osx 桌面版的 USB的传输数据协议 windows版本采用的是 c# 语言的 Java我测试过没有 c#的速度快并支持不好
+The next version update adds the osx desktop version of the USB transmission data protocol. The windows version uses c# language Java. I have tested that it is not as fast as c# and does not support well.
 
 
 ```
@@ -99,11 +99,11 @@ uint16_t Cccal_CRC16(const uint8_t* p_data, uint32_t size)
 
 
 
-### 本次更新增加了可以设置发送数据大小的修改 可以随意设置你发送数据大小
+### This update adds the modification that can set the size of the sent data, you can set the size of your sent data at will
 
 ```objective-c
 
-YmodemUtil.m 里面
+YmodemUtil.m 
 - (instancetype)init:(uint32_t)size
 {
     self = [super init];
@@ -116,7 +116,7 @@ YmodemUtil.m 里面
     return self;
 }
 
-调用 MainController.m
+ MainController.m
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -139,7 +139,7 @@ YmodemUtil.m 里面
 ```
 
 
-### 本次更新增加了新的功能 可以解决一些直接是 NSData 数据的传输
+### This update adds new features that can solve some direct NSData data transmission
 
 ```objective-c
 
@@ -148,7 +148,7 @@ YmodemUtil.m 里面
 
 ```
 
-### 更新一些条件的判断 防止代码在更新过程中出现发送数据错误
+### Update the judgment of some conditions to prevent the code from sending data errors during the update process
 
 ```objective-c
 
@@ -295,26 +295,28 @@ typedef enum : NSUInteger {
 
 
 
-原理
+principle
 
-1.首先理解什么是YModem通讯？
+1. First understand what is YModem communication?
 
-YModem协议是XModem的改进协议，它最用于调制解调器之间的文件传输的协议，具有快速，稳定传输的优点。它的传输速度比XModem快，这是由于它可以一次传输1024字节的信息块，同时它还支持传输多个文件，也就是常说的批文件传输。 
+The YModem protocol is an improved protocol of XModem. It is the most used protocol for file transfer between modems. It has the advantages of fast and stable transmission. Its transmission speed is faster than XModem, this is because it can transmit 1024 bytes of information block at a time, and it also supports the transmission of multiple files, which is often referred to as batch file transmission.
 
-YModem分成YModem-1K与YModem-g。 
+YModem is divided into YModem-1K and YModem-g.
 
-我使用的是YModem-1K 也就是一次传输1024字节。
-
-
-YModem-1K用1024字节信息块传输取代标准的128字节传输，数据的发送回使用CRC校验，保证数据传输的正确性。它每传输一个信息块数据时，就会等待接收端回应ACK信号，接收到回应后，才会继续传输下一个信息块，保证数据已经全部接收。 
+I am using YModem-1K, which is to transmit 1024 bytes at a time.
 
 
-YModem-g传输形式与YModem-1K差不多，但是它去掉了数据的CRC校验码，同时在发送完一个数据块信息后，它不会等待接收端的ACK信号，而直接传输下一个数据块。正是它没有涉及错误校验，才使得它的传输速度比YModem-1K来得块。
+YModem-1K uses 1024-byte information block transmission instead of standard 128-byte transmission, and the data is sent back using CRC to ensure the correctness of data transmission. Each time it transmits an information block data, it will wait for the receiver to respond with an ACK signal. After receiving the response, it will continue to transmit the next information block to ensure that all data has been received.
 
-一般都会选择YModem-1K传输，平时所说的YModem也是指的是YModem-1K。下面就讲讲它的传输协议 
 
-由于上面都是些 C语言相关的所以省略了直接进入主题。
-2.理解传输数据格式
+The transmission form of YModem-g is similar to that of YModem-1K, but it removes the CRC check code of the data. At the same time, after sending a data block information, it will not wait for the ACK signal from the receiving end, but directly transmits the next data block. It is precisely that it does not involve error checking that makes its transmission speed faster than YModem-1K.
+
+Generally, YModem-1K is selected for transmission, and YModem usually refers to YModem-1K. Let’s talk about its transmission protocol
+
+Because the above are all related to the C language, I omitted to go directly to the topic.
+
+2. Transmission data format
+
 ```java
 /**
  * ========================================================================================
@@ -344,12 +346,12 @@ YModem-g传输形式与YModem-1K差不多，但是它去掉了数据的CRC校验
  * ===========================================================================================
  **/
 ```
-我们用的设备首先要发送0x05与蓝牙通讯 然后设备返回一个C 接受到C后立即发送头部包到设备 此处 需要CRC16校验 采用标准的欧美标准
+The device we use first sends 0x05 to communicate with Bluetooth, and then the device returns a C. After receiving C, it sends the header packet to the device immediately. CRC16 check is required here. Standard European and American standards are adopted.
 
-接下来就可以依次进行数据发送
+Then you can send data sequentially
 
-注意：每一个公司的协议是不一样的但是你理解原理之后 协议不管怎么改 都可以去解决。
+Note: The agreement of each company is different, but after you understand the principle, no matter how you change the agreement, you can solve it.
 
-发送YModem到蓝牙的关键代码 根据底层的协议去进行发送数据
+The key code for sending YModem to Bluetooth is to send data according to the underlying protocol
 
-具体的详细过程 请看YYModemOCDemo
+For the detailed process, please see YYModemOCDemo
