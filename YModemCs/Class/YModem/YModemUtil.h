@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "YModem.h"
-#import "Constants.h"
-
+#import "CommonUtil.h"
 
 typedef enum : NSUInteger {
     OTAStatusNONE,
@@ -22,7 +21,6 @@ typedef enum : NSUInteger {
     OTAStatusEOT,
 } OTAStatus;
 
-
 typedef enum : NSUInteger {
     OrderStatusNONE,
     OrderStatusC,
@@ -32,15 +30,10 @@ typedef enum : NSUInteger {
     OrderStatusFirst,
 } OrderStatus;
 
-
-
-//设置代理方法
 @protocol YModemUtilDelegate <NSObject>
 
-//写入蓝牙数据
+//writing Bluetooth data
 -(void)onWriteBleData:(NSData*) data;
-
-//-(void)onCurrent:(NSInteger)current onTotal:(NSInteger)total;
 
 @end
 
@@ -53,18 +46,24 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) OTAStatus status;
 
 
-//文件格式
+//file style
 -(void)setFirmwareHandleOTADataWithOrderStatus:(OrderStatus)status fileName:(NSString *)filename completion:(void(^)(NSInteger current,NSInteger total,NSString *msg))complete;
 
 
-//NSData格式
+//NSData style
 - (void)setFirmwareHandlerDFUDataWithOrderStatus:(OrderStatus)status fileData:(NSData *)data completion:(void(^)(NSInteger current,NSInteger total,NSString *msg))complete;
 
+/*
+ fileName: file is name
+ filePath: The real path where the file is located
+ return current: Current file write progress, total: file total size, data: file is data, msg: return message
+ */
+-(void) setFirmwareUpgrade:(OrderStatus) status fileName:(NSString *) filename filePath:(NSString *) filepath completion:(void(^)(NSInteger current, NSInteger total, NSData *data, NSString *msg))complete;
 
-
-- (NSData *)prepareFirstPacketWithFileName:(NSString *)filename;
-
--(void)stopOtaUpgrad;
+/*
+ Stop upgrade
+ */
+-(void)stop;
 
 - (instancetype)init:(uint32_t)size;
 

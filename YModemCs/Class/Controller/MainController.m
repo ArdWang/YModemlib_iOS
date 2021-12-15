@@ -67,6 +67,32 @@
            if(![msg isEqualToString:@""]&&msg!=nil)
                weakSelf.mainView.downLoadView.musicDownLoadLab.text = msg;
        }];
+    
+    
+    // Use new method
+    [self.ymodemUtil setFirmwareUpgrade:self.orderStatus fileName:self.fileName filePath:self.filePath completion:^(NSInteger current,NSInteger total, NSData *data, NSString *message){
+        
+        float much = (float)current/total;
+        if(much<=1.0){
+            if(weakSelf.mainView.downLoadView.musicalProgress<=1.0){
+                weakSelf.mainView.downLoadView.musicalProgress=much;
+                if ((int)(weakSelf.mainView.downLoadView.musicalProgress*100)%5==0) {
+                    [weakSelf.mainView.downLoadView startDownLoad];
+                }
+            }else{
+                weakSelf.mainView.downLoadView.musicDownLoadLab.text = @"Upgrade Complete!";
+            }
+        }
+        
+        if(![message isEqualToString:@""] && message!=nil)
+            weakSelf.mainView.downLoadView.musicDownLoadLab.text = message;
+        
+        // Writting bluetooth data
+        // In this way, the agent can be removed
+        if(data.length > 0){
+            [[BlueHelp sharedManager] wirteBleOTAData:data];
+        }
+    }];
 }
 
 /*

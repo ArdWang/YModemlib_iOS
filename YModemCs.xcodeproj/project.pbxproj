@@ -31,7 +31,6 @@
 		BCC958ED20D242FC0086F856 /* OTAFileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958EC20D242FC0086F856 /* OTAFileCell.m */; };
 		BCC958F220D2435F0086F856 /* FileOTAView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958F120D2435F0086F856 /* FileOTAView.m */; };
 		BCC958F520D243A30086F856 /* FileOTAController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC958F420D243A30086F856 /* FileOTAController.m */; };
-		BE4FC96D24DE3FD60093AF88 /* DFUUpdateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4FC96C24DE3FD60093AF88 /* DFUUpdateUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,9 +99,6 @@
 		BCC958F120D2435F0086F856 /* FileOTAView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileOTAView.m; sourceTree = "<group>"; };
 		BCC958F320D243A30086F856 /* FileOTAController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileOTAController.h; sourceTree = "<group>"; };
 		BCC958F420D243A30086F856 /* FileOTAController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileOTAController.m; sourceTree = "<group>"; };
-		BE4FC96824DE3F9C0093AF88 /* DFUUpdate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFUUpdate.h; sourceTree = "<group>"; };
-		BE4FC96B24DE3FD60093AF88 /* DFUUpdateUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFUUpdateUtil.h; sourceTree = "<group>"; };
-		BE4FC96C24DE3FD60093AF88 /* DFUUpdateUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DFUUpdateUtil.m; sourceTree = "<group>"; };
 		D00BF10054200B0F5196A874 /* libPods-YModemCs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YModemCs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42A7ABAACECD11999B33E79 /* Pods-YModemCs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YModemCs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YModemCs/Pods-YModemCs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,7 +236,6 @@
 		BCC958BE20D213480086F856 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				BE4FC96724DE3F730093AF88 /* DfuUpgrade */,
 				BC4F741020D365D0004505E4 /* Controller */,
 				BCC958E220D21D360086F856 /* View */,
 				BCC958DD20D21AE40086F856 /* File(文件) */,
@@ -356,16 +351,6 @@
 				BCC958F120D2435F0086F856 /* FileOTAView.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		BE4FC96724DE3F730093AF88 /* DfuUpgrade */ = {
-			isa = PBXGroup;
-			children = (
-				BE4FC96824DE3F9C0093AF88 /* DFUUpdate.h */,
-				BE4FC96B24DE3FD60093AF88 /* DFUUpdateUtil.h */,
-				BE4FC96C24DE3FD60093AF88 /* DFUUpdateUtil.m */,
-			);
-			path = DfuUpgrade;
 			sourceTree = "<group>";
 		};
 		FFC23E88857FD90BB294C21C /* Frameworks */ = {
@@ -561,7 +546,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC958CD20D214320086F856 /* BTAlertController.m in Sources */,
-				BE4FC96D24DE3FD60093AF88 /* DFUUpdateUtil.m in Sources */,
 				BCC958CA20D213F80086F856 /* CommonUtil.m in Sources */,
 				BCC958E120D21D160086F856 /* MainController.m in Sources */,
 				BCC958D120D2146F0086F856 /* DeviceModel.m in Sources */,
