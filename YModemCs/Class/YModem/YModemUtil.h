@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "YModem.h"
-#import "CommonUtil.h"
 
 typedef enum : NSUInteger {
     OTAStatusNONE,
