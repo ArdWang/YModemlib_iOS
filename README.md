@@ -9,6 +9,8 @@
 
 Android Version： https://github.com/ArdWang/YModemlib_Android
 
+flutter version: https://github.com/QuickDevelopers/flutter_ymodem
+
 View the latest version
 
 https://cocoapods.org/pods/YModemLib
