@@ -4,9 +4,12 @@
 <a href="https://raw.githubusercontent.com/QuickDevelopers/YModemLib/master/LICENSE" rel="nofollow"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="GitHub license" data-canonical-src="https://img.shields.io/badge/license-MIT-lightgrey.svg" style="max-width:100%;"></a> <a href="https://cocoapods.org/pods/YModemLib" rel="nofollow"><img src="https://img.shields.io/cocoapods/v/YModemLib.svg" alt="CocoaPods Compatible" data-canonical-src="https://img.shields.io/cocoapods/v/YModemLib.svg" style="max-width:100%;"></a> <a href="http://cocoadocs.org/docsets/YModemLib" rel="nofollow"><img src="https://img.shields.io/cocoapods/p/YModemLib.svg?style=flat" alt="Platform" data-canonical-src="https://img.shields.io/cocoapods/p/YModemLib.svg?style=flat" style="max-width:100%;"></a>
 <br>
 
+## Support MacOs ，iOS ，flutter Mixed development
+<br>
+
 Android Version： https://github.com/ArdWang/YModemlib_Android
 
-### Update 2020 11/6
+flutter version: https://github.com/QuickDevelopers/flutter_ymodem
 
 View the latest version
 
@@ -33,7 +36,7 @@ Added practical pod import
 ```shell
 
 target 'MyApp' do
-  pod 'YModemLib', '~> 1.0.1'
+  pod 'YModemLib', '~> 1.0.2'
 end
 
 ```
@@ -59,6 +62,64 @@ run pod repo update or pod install --repo-update
 Then run a pod install inside your terminal, or from CocoaPods.app.
 
 Alternatively to give it a test run, run the command:
+
+### Update Dec 15 2021
+
+This update adds a new method，No proxy method is required to run
+
+stopOtaUpgrade modify is stop
+
+Updated only the file name and file path, which can be applied to MacOS and iOS
+
+This update supports the development of ymodem protocol by flutter hybrid Bluetooth
+
+
+```
+/*
+ fileName: file is name
+ filePath: The real path where the file is located
+ return current: Current file write progress, total: file total size, data: file is data, msg: return message
+ */
+-(void) setFirmwareUpgrade:(OrderStatus) status fileName:(NSString *) filename filePath:(NSString *) filepath completion:(void(^)(NSInteger current, NSInteger total, NSData *data, NSString *msg))complete;
+
+/*
+ Stop upgrade
+ */
+-(void)stop;
+
+```
+
+use example
+
+```
+ // Use new method
+    [self.ymodemUtil setFirmwareUpgrade:self.orderStatus fileName:self.fileName filePath:self.filePath completion:^(NSInteger current,NSInteger total, NSData *data, NSString *message){
+        
+        float much = (float)current/total;
+        if(much<=1.0){
+            if(weakSelf.mainView.downLoadView.musicalProgress<=1.0){
+                weakSelf.mainView.downLoadView.musicalProgress=much;
+                if ((int)(weakSelf.mainView.downLoadView.musicalProgress*100)%5==0) {
+                    [weakSelf.mainView.downLoadView startDownLoad];
+                }
+            }else{
+                weakSelf.mainView.downLoadView.musicDownLoadLab.text = @"Upgrade Complete!";
+            }
+        }
+        
+        if(![message isEqualToString:@""] && message!=nil)
+            weakSelf.mainView.downLoadView.musicDownLoadLab.text = message;
+        
+        // Writting bluetooth data
+        // In this way, the agent can be removed
+        if(data.length > 0){
+            [[BlueHelp sharedManager] wirteBleOTAData:data];
+        }
+    }];
+
+```
+
+
 
 
 ### Update 2020 8/8
