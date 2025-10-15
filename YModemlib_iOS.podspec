@@ -29,9 +29,6 @@ Pod::Spec.new do |spec|
                    DESC
   
 
-
-
-
   spec.homepage     = "https://github.com/ArdWang/YModemlib_iOS"
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
@@ -39,9 +36,9 @@ Pod::Spec.new do |spec|
                  
   spec.author       = { "ArdWang" => "278161009@qq.com" }
                  
-  spec.platform     = :ios, "9.0"
+  #spec.platform     = :ios, "9.0"
                  
-  spec.ios.deployment_target = "9.0"
+  spec.ios.deployment_target = "11.0"
                  
                  
   spec.source    = { :git => "https://github.com/ArdWang/YModemlib_iOS.git", :tag => "#{spec.version}" }
@@ -50,9 +47,24 @@ Pod::Spec.new do |spec|
                  
                  
                  
-  spec.source_files  = "YModemlib_iOS", "YModemCs/Class/YModem/*.{h,m}"
+  spec.source_files  = "YModemlib_iOS", "YModemCs/Class/YModem/*.{h,m,c}"
+
+  # 重要的架构配置
+  spec.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '',  # 清空排除的架构
+    'VALID_ARCHS' => 'x86_64 arm64 armv7',
+    'ARCHS[sdk=iphonesimulator*]' => 'x86_64 arm64'
+  }
+  
+  # 对于新版本的 CocoaPods，使用这个配置
+  spec.user_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
                  
   spec.frameworks = "Foundation","UIKit","CoreBluetooth"
+
+  
                  
                   
                  
