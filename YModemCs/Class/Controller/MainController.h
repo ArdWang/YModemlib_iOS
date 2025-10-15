@@ -15,16 +15,12 @@
 
 @interface MainController : UIViewController
 
-@property(strong,nonatomic) MainView *mainView;
 
-@property(strong,nonatomic) YModemUtil *ymodemUtil;
-
-@property(strong,nonatomic) NSArray *firmwareFilesArray, *firmWareRowDataArray;
-
-@property(strong,nonatomic) NSString *fileName;
-
-@property(strong,nonatomic) NSString *filePath;
-
-@property(nonatomic,assign) NSUInteger orderStatus;
+@property (nonatomic, strong) MainView *mainView;           // Main user interface view
+@property (nonatomic, strong) YModemUtil *ymodemUtil;       // YModem protocol utility
+@property (nonatomic, assign) OrderStatus orderStatus;      // Current OTA command status
+@property (nonatomic, strong) NSString *fileName;           // Selected firmware file name
+@property (nonatomic, strong) NSString *filePath;           // Selected firmware file path
+@property (nonatomic, strong) NSArray *firmwareFilesArray;  // Array of available firmware files
 
 @end
