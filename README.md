@@ -36,10 +36,56 @@ Added practical pod import
 ```shell
 
 target 'MyApp' do
-  pod 'YModemLib', '~> 1.0.2'
+  pod 'YModemlib_iOS', '~> 2.0.0'
 end
 
 ```
+
+### Update October 15 2025 Wednesday
+
+1. Update version to 2.0
+2. The code has been repaired again.
+3. Add retransmissions and cancellations.
+
+
+The newly added methods are as follows：
+
+```java
+
+/// Cancel OTA upgrade
+- (void)cancel;
+
+/// Retry current packet transmission
+- (void)retryCurrentPacket;
+
+```
+
+```java
+/**
+ Handle cancel OTA button click event
+ */
+- (void)cancelOnClick {
+    // Cancel ongoing OTA process
+    [self.ymodemUtil cancel];
+    
+    // Update UI to show cancellation
+    self.mainView.downLoadView.musicDownLoadLab.text = @"Upgrade Cancelled";
+    self.mainView.downLoadView.musicalProgress = 0.0;
+    [self.mainView.downLoadView startDownLoad];
+}
+
+/**
+ Handle retry OTA button click event
+ */
+- (void)retryOnClick {
+    // Retry current packet transmission
+    [self.ymodemUtil retryCurrentPacket];
+    
+    self.mainView.downLoadView.musicDownLoadLab.text = @"Retrying...";
+}
+
+```
+
 
 If you report the following error when using
 
