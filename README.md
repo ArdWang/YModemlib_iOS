@@ -13,7 +13,7 @@ flutter version: https://github.com/QuickDevelopers/flutter_ymodem
 
 View the latest version
 
-[https://cocoapods.org/pods/YModemLib](https://cocoapods.org/pods/YModemlib_iOS)
+[(https://cocoapods.org/pods/YModemlib_iOS)](https://cocoapods.org/pods/YModemlib_iOS)
 
 
 Use:
