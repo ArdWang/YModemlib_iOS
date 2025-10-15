@@ -41,6 +41,30 @@ end
 
 ```
 
+
+If you report the following error when using
+
+```java
+[!] CocoaPods could not find compatible versions for pod "BleManageSwift":
+  In Podfile:
+    BleManageSwift (~> current version)
+
+None of your spec sources contain a spec satisfying the dependency: `BleManageSwift (~> current version)`.
+
+You have either:
+ * out-of-date source repos which you can update with `pod repo update` or with `pod install --repo-update`.
+ * mistyped the name or version.
+ * not added the source repo that hosts the Podspec to your Podfile.
+
+```
+
+run pod repo update or pod install --repo-update
+
+Then run a pod install inside your terminal, or from CocoaPods.app.
+
+Alternatively to give it a test run, run the command:
+
+
 ### Update October 15 2025 Wednesday
 
 1. Update version to 2.0
@@ -87,27 +111,6 @@ The newly added methods are as follows：
 ```
 
 
-If you report the following error when using
-
-```java
-[!] CocoaPods could not find compatible versions for pod "BleManageSwift":
-  In Podfile:
-    BleManageSwift (~> current version)
-
-None of your spec sources contain a spec satisfying the dependency: `BleManageSwift (~> current version)`.
-
-You have either:
- * out-of-date source repos which you can update with `pod repo update` or with `pod install --repo-update`.
- * mistyped the name or version.
- * not added the source repo that hosts the Podspec to your Podfile.
-
-```
-
-run pod repo update or pod install --repo-update
-
-Then run a pod install inside your terminal, or from CocoaPods.app.
-
-Alternatively to give it a test run, run the command:
 
 ### Update Dec 15 2021
 
