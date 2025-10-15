@@ -70,6 +70,7 @@ Alternatively to give it a test run, run the command:
 1. Update version to 2.0
 2. The code has been repaired again.
 3. Add retransmissions and cancellations.
+4. The minimum version is ios11 or >=11
 
 
 The newly added methods are as follows：
